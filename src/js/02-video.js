@@ -16,7 +16,7 @@ player.on(
 );
 
 const lastTime = JSON.parse(localStorage.getItem('CURRENT_TIME'));
-console.log(lastTime);
+
 if (lastTime) {
   player.setCurrentTime(lastTime);
 }
