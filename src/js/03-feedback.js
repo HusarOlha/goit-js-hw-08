@@ -26,20 +26,20 @@ function onFormSubmit(evt) {
     const parseData = JSON.parse(localStorage.getItem(LOCAL_KEY));
     console.log(parseData);
   }
+  console.log(formData);
 }
 
 function onTextAreaInput(evt) {
   formData[evt.target.name] = evt.target.value;
 
-  localStorage.setItem('LOCAL_KEY', JSON.stringify(formData));
+  localStorage.setItem(LOCAL_KEY, JSON.stringify(formData));
 }
 
 function populateTextArea() {
   const savedData = localStorage.getItem(LOCAL_KEY);
   const parseData = JSON.parse(savedData);
-  if (savedData && parseData.email && parseData.message) {
+  if (savedData && parseData.email) {
     refs.input.value = parseData.email;
-    refs.textarea.value = parseData.message;
   }
   if (savedData && parseData.message) {
     refs.textarea.value = parseData.message;
