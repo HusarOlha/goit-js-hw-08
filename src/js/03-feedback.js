@@ -22,10 +22,10 @@ function onFormSubmit(evt) {
 
   localStorage.removeItem(LOCAL_KEY);
 
-  if (localStorage.getItem(LOCAL_KEY)) {
-    const parseData = JSON.parse(localStorage.getItem(LOCAL_KEY));
-    console.log(parseData);
-  }
+  // if (localStorage.getItem(LOCAL_KEY)) {
+  //   const parseData = JSON.parse(localStorage.getItem(LOCAL_KEY));
+  //   console.log(parseData);
+  // }
   console.log(formData);
 }
 
