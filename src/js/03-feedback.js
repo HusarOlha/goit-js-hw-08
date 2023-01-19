@@ -36,13 +36,12 @@ function onTextAreaInput(evt) {
 }
 
 function populateTextArea() {
-  const savedData = localStorage.getItem(LOCAL_KEY);
-  const parseData = JSON.parse(savedData);
-  if (savedData && parseData.email) {
-    refs.input.value = parseData.email;
-  }
-  if (savedData && parseData.message) {
-    refs.textarea.value = parseData.message;
+  if (localStorage.getItem(LOCAL_KEY)) {
+    const formData = JSON.parse(localStorage.getItem(LOCAL_KEY));
+
+    for (let key in formData) {
+      refs.form.elements[key].value = formData[key];
+    }
   }
 }
 populateTextArea();
